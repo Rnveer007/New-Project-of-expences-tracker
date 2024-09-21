@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <input type="number" placeholder="Enter Your Amount" id="totalValue" autofocus>
+        <button id="submit"> Submit </button>
+
+        <div>
+
+            <input type="text" name="" id="kharchaKahaHua" placeholder="kharcha Kaha Hua">
+            <input type="number" id="kharchaKitnaHua" placeholder="kharcha Kitna Hua">
+            <button id="add">Add</button>
+        </div>
+
+        <div id="result">
+            <p>Total Amount :- <span id="span1"></span></p>
+            <p>Spent Amount :- <span id="span2"></span></p>
+            <p>Remaning Amount :- <span id="span3"></span></p>
+
+        </div>
+      
+        <script>
+
+            let total = document.querySelector("#totalValue")
+            let btn = document.querySelector("#submit")
+            let span1 = document.querySelector("#span1")
+            let span2 = document.querySelector("#span2")
+            let span3 = document.querySelector("#span3")
+            let showResult = document.querySelector("#result")
+            let kharchaHua = document.querySelector("#kharchaKahaHua")
+            let kharchaKitna = document.querySelector("#kharchaKitnaHua")
+            let add = document.querySelector("#add")
+            let para = document.querySelector("p")
+ 
+
+            submit.addEventListener("click", function () {
+                span1.innerHTML = total.value
+            })
+
+            add.addEventListener("click", function () {
+
+                let para1 = document.createElement("p")
+                let para2 = document.createElement("p")
+
+                if (Number(kharchaKitna.value) <= Number(total.value)) {
+                    para1.innerHTML = "Expense Name  " + kharchaHua.value
+                    para2.innerHTML = "Expense Amount  " + kharchaKitna.value
+                    showResult.append(para1)
+                    showResult.append(para2)
+                    span2.innerHTML = Number(kharchaKitna.value) + Number(span2.innerHTML)
+                    span3.innerHTML = Number(total.value) - Number(span2.innerHTML)
+                    // total.value = span3.innerHTML
+
+
+                    if(span3.innerHTML < 0){
+                            alert("not allowed")
+                        }
+                } 
+
+                else {
+
+                    alert("not enough blance")
+                }
+            }
+            )
+
+        </script>
+</body>
+
+</html>

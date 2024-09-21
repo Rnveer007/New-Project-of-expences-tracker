@@ -1,0 +1,16 @@
+.container{
+    margin: 3rem 5rem;
+}
+
+.container input{
+    margin: 2rem 10px;
+    width: 250px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+#expensesName , #expensesAmount{
+
+    margin: 1rem 0;
+    margin-right: 5px   ;
+}
